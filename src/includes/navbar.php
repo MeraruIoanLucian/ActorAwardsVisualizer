@@ -11,9 +11,9 @@
     
     <div class="nav-links">
         <a href="/">Home</a>
-        <a href="/pages/searchActor.php">Search Actor</a>
-        <a href="/pages/nominations.php">Nominations</a>
-        <a href="/pages/stats.php">Statistics</a>
+        <a href="/searchActor">Search Actor</a>
+        <a href="/nominations">Nominations</a>
+        <a href="/stats">Statistics</a>
     </div>
 </nav>
 ?>

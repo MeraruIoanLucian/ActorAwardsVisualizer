@@ -1,12 +1,13 @@
 <?php
-require_once __DIR__ . '/../includes/db.php';
-require_once __DIR__ . '/../includes/tmdb.php';
-require_once __DIR__ . '/../includes/functions.php';
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../src/config/config.php';
+require_once __DIR__ . '/../../src/includes/db.php';
+require_once __DIR__ . '/../../src/includes/tmdb.php';
+require_once __DIR__ . '/../../src/includes/functions.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../..');
 $dotenv->load();
-$api_key = $_ENV['TMDB_API_KEY'] ?? '';
+$api_key = TMDB_API_KEY;
 
 // verificam ce actor a fost cautat
 if (!isset($_GET['name']) && !isset($_GET['tmdb_id'])) {
@@ -61,7 +62,7 @@ if ($actor_db) {
         // verificam daca actorul exista deja in baza de date dupa ID-ul TMDB
         $actor_db = findActorInDatabase($db, $tmdb_id);
         if ($actor_db) {
-            header("Location: actor_profile.php?tmdb_id=" . $tmdb_id);
+            header("Location: /actor_profile?tmdb_id=" . $tmdb_id);
             exit;
         }
         
@@ -103,12 +104,12 @@ $news = getActorNews($actor_name);
     <meta charset="UTF-8">
     <title><?php echo htmlspecialchars($actor_name); ?> - Actor Profile</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/actor_profile.css">
-    <link rel="stylesheet" href="../assets/css/navbar.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/actor_profile.css">
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
 </head>
 <body>
-    <?php include '../includes/navbar.php'; ?>
+    <?php include '../../src/includes/navbar.php'; ?>
     <div class="container">
         <div class="main-content">
             <!-- COLOANA STANGA -->
@@ -209,6 +210,7 @@ $news = getActorNews($actor_name);
             </div>
         </div>
     </div>
-    <?php include '../includes/footer.php'; ?>
+
+    <?php include '../../src/includes/footer.php'; ?>
 </body>
 </html>

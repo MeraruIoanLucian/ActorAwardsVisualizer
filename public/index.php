@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body>
-    <?php include 'includes/navbar.php'; ?>
+    <?php include '../src/includes/navbar.php'; ?>
     <main class="main-content">
         <section class="hero">
             <div class="hero-content">
@@ -28,29 +28,29 @@
                     <div class="card">
                         <div class="card-icon">🎭</div>
                         <h3>Nominations</h3>
-                        <p>Browse nominations by year, category, actor, or production</p>
-                        <a href="pages/nominations.php" class="card-button">View Nominations</a>
+                        <p>Browse nominations by year, category, actor, or productions</p>
+                        <a href="/nominations" class="card-button">View Nominations</a>
                     </div>
 
                     <div class="card">
                         <div class="card-icon">👤</div>
                         <h3>Actors</h3>
                         <p>Explore detailed profiles, biographies, and award histories</p>
-                        <a href="pages/searchActor.php" class="card-button">Browse Actors</a>
+                        <a href="/searchActor" class="card-button">Browse Actors</a>
                     </div>
                     
                     <div class="card">
                         <div class="card-icon">🎬</div>
                         <h3>Productions</h3>
                         <p>Discover movies and TV shows with their nominations</p>
-                        <a href="pages/production.php" class="card-button">View Productions</a>
+                        <a href="/productions" class="card-button">View Productions</a>
                     </div>
                     
                     <div class="card">
                         <div class="card-icon">📊</div>
                         <h3>Statistics</h3>
                         <p>Analyze trends, generate charts, and export data</p>
-                        <a href="pages/stats.php" class="card-button">View Statistics</a>
+                        <a href="/stats" class="card-button">View Statistics</a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                 <h2>Quick Overview</h2>
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <div class="stat-number">2,500+</div>
+                        <div class="stat-number">5,900+</div>
                         <div class="stat-label">Total Nominations</div>
                     </div>
                     <div class="stat-item">
@@ -73,7 +73,7 @@
                         <div class="stat-label">Award Categories</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">30+</div>
+                        <div class="stat-number">40+</div>
                         <div class="stat-label">Years of Data</div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
         </section>
     </main>
 
-    <?php include 'includes/footer.php'; ?>
+    <?php include '../src/includes/footer.php'; ?>
  
 </body>
 </html>
